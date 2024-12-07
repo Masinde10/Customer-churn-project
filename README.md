@@ -1,8 +1,8 @@
 # Predicting Customer Churn For SyriaTel Company
 
-**Author**: [Masinde Victor](https://github.c om/Masinde10)
+**Author**: [Masinde Victor](https://github.com/Masinde10)
 
-![Telecommunication](http://localhost:8888/view/pict--telecommunication.png)
+![Telecommunication](Images/pict--telecommunication.png)
 
 ## Project Overview
 This project deals with a company, SyriaTel, that wants to know more about their customer churn. Customers leave a company due to different reasons and my project aims to uncover the reasons and predict customer churn. The company can then use the information gained from this project to work on retaining their customers. Retaining customers is cheaper and easier as compared to gaining a new customer. The project utilizes the SyriaTel Telecoms dataset to create a classification model that predicts if a customer will churn or not. This is a problem of binary classification. 
@@ -36,8 +36,8 @@ Logistic regression is among the models that can be used when dealing with class
 #### 2. Tuned Logistic Model
 As seen in our Exploratory data analysis, there is an imbalance in our target class. The class `not churned`(0) is bigger than the `churned` class(1). This can lead to overfitting of the models and as a result predict one class very well but fail to predict the other. To adress this we intorduce SMOTE to help us in balancing the target classes. It does that by duplicating the minority class until they are even with the majority class. We then pass the balanced X and ys to our logistic model and make predictions which will in tunr help us calculate the perfomance metrics of the model.
 
-![Before SMOTE](http://localhost:8888/view/Before_SMOTE.png)
-![After SMOTE](http://localhost:8888/view/After_SMOTE.png)
+![Before SMOTE](Images/Before_SMOTE.png)
+![After SMOTE](Images/After_SMOTE.png)
 
 #### 3.Decision Tree Classifier
 Decision tree classifiers are sophisticated machine learning models that use tree-like structures to categorise data. They work by recursively splitting the feature space into smaller subsets based on the most informative attributes. Starting from the root node, decision trees assess conditions at each internal node before proceeding along the appropriate branch. This process continues until it reaches a leaf node, which gives the final prediction or label. Decision trees can handle category and numerical variables, making them useful tools for a variety of classification applications. For this model, we will make use of the data that have their classes balanced by SMOTE. We can also get the metrics of the model as we did above.
@@ -45,22 +45,22 @@ Decision tree classifiers are sophisticated machine learning models that use tre
 #### 4.Random Forest Classifier
 Random forests Classifier models can handle high-dimensional datasets and are especially good at dealing with noise and outliers. The randomisation introduced during tree construction helps to reduce overfitting, so random forests are less likely to memorise training data patterns. Despite their complexity, random forests are interpretable due to the intrinsic simplicity of individual decision trees in the ensemble. For this model, we will make use of the data that have their classes balanced by SMOTE. We can also get the metrics of the model as we did in the other models above.
 
-![Tree Diagram](http://localhost:8888/view/first_tree.png)
+![Tree Diagram](Images/first_tree.png)
 
 ## Evaluation of Models
 Now that we have four models, we need to settle on one that will be used by the SyriaTel communications company to predict customer churn with confidence. All the models have their metrics calculated and we can use them to compare the models. The metrics include; **Accuracy, F1 score, recall, precission, AUC and ROC curves**
 
 In terms of `accuracy`, the model that is perfoming the best is `Decision Tree Classifier` then closely followed by Random Forest Classifier. The worst perfoming is the tuned logistic regression model.
 
-![Accuracy](http://localhost:8888/view/Accuracy.png)
+![Accuracy](Images/Accuracy.png)
 
 In terms of `F1 score`, the model that is perfoming the best is `Random Forest Classifier` then closely followed by Decision Tree Classifier.The worst perfoming model is the logistic regression baseline model.
 
-![F1 Score](http://localhost:8888/view/F1_scores.png)
+![F1 Score](Images/F1_scores.png)
 
 Evaluating the visualizations made, we see that the `AUC` of the `Random Forest Classifier` is higher than all the other models. This an indicator of a good model. We also check at the positions of our graph, in that the curve that is closer to the `top left corner` is the one with the `best perfomance`. The curve closer to the top left corner is that of the `Random Forest Classifier.`
 
-![ROC Curve](http://localhost:8888/view/Roc_curves.png)
+![ROC Curve](Images/Roc_curves.png)
 
 ## Conclusion, 
 the project above shows that we can accurately predict customer churn on a significant level using a machine learning model.The comparisons indicate that the Random Forest Classifier Model is the most appropriate in our case being the one with good perfomance metrics overally. Random Forest Classifier is the best performing model with an ROC curve that is near the upper left corner of the graph, hence giving us the largest AUC (Area Under the curve).
